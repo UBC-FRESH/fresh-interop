@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fresh-interop"
+version = "0.1.0a1"
+description = "Optional Treemün <-> WS3 interoperability and parity harness (benchmark only, not a runtime dependency)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "UBC FRESH Lab" }]
+keywords = [
+    "forest-modelling",
+    "interoperability",
+    "parity",
+    "harvest-scheduling",
+    "treemun",
+    "ws3",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+]
+
+# ws3 supplies the optimization layer under test. Treemün is optional and is
+# intentionally not a base dependency.
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "ws3>=1.1.0a5",
+]
+
+[project.optional-dependencies]
+treemun = ["treemun-sim==2.0.0.post1"]
+spatial = [
+    "geopandas>=0.14",
+    "shapely>=2.0",
+    "pyogrio>=0.7",
+]
+complete = [
+    "treemun-sim==2.0.0.post1",
+    "geopandas>=0.14",
+    "shapely>=2.0",
+    "pyogrio>=0.7",
+]
+dev = [
+    "build>=1.2",
+    "pytest>=8",
+    "ruff>=0.5",
+]
+test = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://github.com/UBC-FRESH/fresh-interop"
+Repository = "https://github.com/UBC-FRESH/fresh-interop"
+Issues = "https://github.com/UBC-FRESH/fresh-interop/issues"
+
+[project.scripts]
+fresh-interop = "fresh_interop.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "B", "C4", "SIM", "RUF"]

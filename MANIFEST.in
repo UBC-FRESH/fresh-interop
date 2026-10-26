@@ -1,0 +1,4 @@
+include README.md
+include LICENSE
+include CHANGE_LOG.md
+recursive-include tests *.py *.csv *.gpkg *.md
