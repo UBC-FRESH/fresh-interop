@@ -1,5 +1,7 @@
 # fresh-interop
 
+[![ci](https://github.com/UBC-FRESH/fresh-interop/actions/workflows/ci.yml/badge.svg)](https://github.com/UBC-FRESH/fresh-interop/actions/workflows/ci.yml)
+
 An **optional** interoperability and parity harness for the
 [UBC-FRESH](https://github.com/UBC-FRESH) modelling ecosystem.
 
