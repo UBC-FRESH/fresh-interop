@@ -38,18 +38,13 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-treemun = ["treemun-sim==2.0.0.post1"]
+treemun = ["treemun-sim[optimization]==2.0.0.post1"]
 spatial = [
     "geopandas>=0.14",
     "shapely>=2.0",
     "pyogrio>=0.7",
 ]
-complete = [
-    "treemun-sim==2.0.0.post1",
-    "geopandas>=0.14",
-    "shapely>=2.0",
-    "pyogrio>=0.7",
-]
+complete = ["treemun-sim[complete]==2.0.0.post1"]
 dev = [
     "build>=1.2",
     "pytest>=8",

@@ -64,9 +64,9 @@ pip install -e ".[complete,dev]"
 pytest
 ```
 
-The `complete` extra pins `treemun-sim==2.0.0.post1` and adds GeoPandas for the
-spatial fixture. If the pin is unavailable, install the `v2.0.0` wheel from the
-GitHub release and record its SHA256.
+The `complete` extra pins `treemun-sim[complete]==2.0.0.post1`, which includes
+Pyomo, HiGHS, and GeoPandas for the spatial fixture. If the pin is unavailable,
+install the `v2.0.0` wheel from the GitHub release and record its SHA256.
 
 ## Run the parity check
 
